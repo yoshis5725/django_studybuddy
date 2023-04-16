@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{ user.username }} Profile{% endblock %}
+
+
+{% block content %}
+
+    <style>
+        .profile-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        }
+    </style>
+
+
+    <h2>{{ user.username }}</h2>
+
+    <div class="profile-container">
+        <div class="">{% include 'base/components/topics.html' %}</div>
+        <div class="">{% include 'base/components/feeds.html' %}</div>
+        <div class="">{% include 'base/components/activity.html' %}</div>
+    </div>
+
+{% endblock %}
+
+

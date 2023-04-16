@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Home Page {% endblock %}
+
+
+{% block content %}
+
+    <style>
+        .home-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+        }
+    </style>
+
+    {#    topics component#}
+    <div class="home-container">
+        <div>
+            {% include 'base/components/topics.html' %}
+        </div>
+
+        {#        feeds component#}
+        <div>
+            <h5>{{ rooms.count }} room{{ rooms.count|pluralize }} available</h5>
+            {% include 'base/components/feeds.html' %}
+        </div>
+
+        {#    activities component#}
+        <div class="">
+            {% include 'base/components/activity.html' %}
+        </div>
+    </div>
+
+{% endblock %}
